@@ -1,0 +1,1024 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap');
+
+
+@import '_mixin';
+@import '_variables';
+
+/****
+====================
+Common CSS
+=======================
+***/
+body{
+	font-family: $font;
+}
+
+/****
+====================
+Heading Section Css start
+=======================
+***/
+.header-section{
+ nav{
+    background: $overlay;
+    @include paddingY(0);
+   .navbar-nav{
+   	.nav-item{
+   		 @include paddingX(15px);
+   		.nav-link{
+   			@include paddingX(0);
+   			@include paddingY(50px);
+   			font-size: 20px;
+   			font-weight: 600;
+   			color: $bColor;
+   			position: relative;
+   			&::after{
+   				content:"";
+   				position: absolute;
+   				width: 100%;
+			    height: 3px;
+			    left: 0;
+			    bottom: -3px;
+			    background: $themeColor;
+			    transform: scaleX(0);
+			    @include transition(0.3s, linear);
+			   	}
+   			&:hover{
+   				color:$themeColor !important;
+   				&::after{
+   				transform: scaleX(1);
+   				}
+   		}
+   	  }	
+   	   .active{
+   	  	color:$themeColor !important;
+   	  	&::after{
+   	  		transform: scaleX(1);
+   	  	}
+   	  }	
+   	}
+   }
+ } 
+}
+
+/****
+====================
+Serach Css start
+=======================
+***/
+
+.dropdown{
+	@include paddingY(50px);
+	.search{
+		text-decoration: none;
+		font-size: 20px;
+		font-weight: 600;
+		color: $bColor;
+		i{
+			margin-top: 10px;
+		}
+	}
+	.dropdown-menu{
+		background-color: transparent;
+		bottom: -40px;
+		width: 252px;
+		right: 0;
+    	left: auto;
+    	border:none;
+		@include paddingX(0);
+   		@include paddingY(0);
+
+		form{
+			background-color: #fff;
+			input{
+				border-radius:0;
+				border:0;
+				@include border(2px, #f2f2f2);
+				&:focus{
+				box-shadow: 0 0 0 0 rgba(13,110,253,0);
+				}
+			}
+			button{
+				background-color: $themeColor;
+				text-decoration: none;
+				font-size: 20px;
+				font-weight: 600;
+				color: #fff;
+				border-radius:0;
+				border:0;
+				box-shadow: 0 0 0 0 rgba(13,110,253, 0);
+				@include border(2px, #f2f2f2);
+
+			}
+		}
+	}
+}
+
+
+/****
+====================
+Slider Section Css start
+=======================
+***/
+.slider-section{
+	position: relative;
+.slider-item{
+	position: relative;
+
+	&::before{
+		position:absolute;
+		content: "";
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0, 0.7);
+		top: 0;
+		left: 0;
+		}
+	.slider-content{
+		position: absolute;
+	    bottom: 50%;
+	    right: 8.8%;
+	    left: 8%;
+	    text-align: right;
+	    transform: translateY(50%);
+		h3{
+			font-size: 60px;
+		    font-weight: 300;
+		    color: #f39c12;
+		    letter-spacing: 1px;
+		    text-transform: uppercase;
+		}
+		h2{
+			font-size: 60px;
+		    font-weight: 800;
+		    color: #fff;
+		    text-transform: uppercase;
+		}
+		.my-button{
+			text-align: center;
+			.btn-custom{
+				text-decoration: none;
+				color: #fff;
+				font-weight: 600;
+				font-size: 18px;
+				@include paddingX(18px);
+   				@include paddingY(12px);
+   				background-color: $themeColor;
+   				text-transform: uppercase;
+   				margin-left: 15px;
+   				margin-right: 15px;
+   				@include transition(0.3s, linear);
+   				&:hover{
+   					background-color: transparent;
+   					border:1px solid #fff;
+   				}
+			}
+		}
+	}
+  }
+  .slider-arrow{
+  	.left-arrow{
+  		position: absolute;
+  		top:50%;
+  		left: 1%;
+  		transform: translateY(-50%);
+  		i{
+  			color: $themeColor;
+  			background-color: #333;
+  			width: 40px;
+  			height: 35px;
+  			line-height: 35px;
+  			text-align: center;
+  			font-size: 17px;
+  			opacity: 0.7;
+  			cursor: pointer;
+  			border-radius: 2px;
+  		}
+  	}
+  	.right-arrow{
+  		position: absolute;
+  		top:50%;
+  		right: 1%;
+  		transform: translateY(-50%);
+  		i{
+  			color: $themeColor;
+  			background-color: #333;
+  			width: 40px;
+  			height: 35px;
+  			line-height: 35px;
+  			text-align: center;
+  			font-size: 17px;
+  			opacity: 0.6;
+  			cursor: pointer;
+  			border-radius: 2px;
+  		}
+  	}
+  }
+}
+
+
+/****
+====================
+Heading Style Css start
+=======================
+***/
+
+.heading{
+	text-align: center;
+	margin-bottom: 70px;
+	h1{
+		color: $textColor;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 45px;
+		font-family:$font;
+	}
+	.line{
+		position: relative;
+	    display: block;
+	    background: $themeColor;
+	    max-width: 500px;
+	    height: 2px;
+	    margin: 0 auto;
+
+	    &::after{
+	    	content:"";
+	    	position: absolute;
+	    	width: 50px;
+		    height: 5px;
+		    background: $themeColor;
+		    bottom: 50%;
+		    right: 50%;
+		    @include translate(50%, 50%);
+		    animation-name:lineMove;
+		    animation-duration: 20s;
+		    animation-iteration-count: infinite;
+		    animation-timing-function: linear;
+		    animation-direction: alternate; 
+	    }
+	}
+}
+
+@keyframes lineMove {
+	0%{
+		right: 50%;
+		    @include translate(50%, 50%);
+	}
+	25%{
+		right: 0;
+		    @include translate(0, 50%);
+	}
+	50%{
+		right: 50%;
+		    @include translate(50%, 50%);
+	}
+	75%{
+		right: 100%;
+		    @include translate(100%, 50%);
+	}
+	100%{
+		right: 50%;
+		    @include translate(50%, 50%);	
+	}
+}
+
+
+/****
+====================
+Section Css start
+=======================
+***/
+.section{
+	@include paddingY(100px);
+}
+
+
+/****
+====================
+About Me Section Css start
+=======================
+***/
+
+.about-me-section{
+	.about-img{
+		img{}
+	}
+.about-content{
+	@include paddingX(80px);
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	height: 100%;
+	p{
+	color: $pColor;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: "Raleway", sans-serif;
+    text-align: justify;
+		}
+
+	.about-progress{
+		position: relative;
+		h2{
+			color: #383838;
+			font-size: 16px;
+		    font-weight: 700;
+		    padding-top: 18px;
+		}
+		.progress{
+				
+				    height: 13px !important;
+				    width: 92%;
+				    .progress-bar{
+				    	background-color: $themeColor;
+				    	animation-name: progress;
+				    	animation-iteration-count: 1;
+				    	animation-duration: 3s;
+				    }
+			}
+			.percentage{
+				position: absolute;
+			    right: -45px;
+			    top: 35px;
+			    background: $themeColor;
+			    padding: 4px 10px;
+			    color: #fff;
+
+			    &::after{
+			    	content:"";
+			    	border-top: 8px solid #27ff0000;
+					border-bottom: 8px solid #0000ff00;
+					border-right: 10px solid #f39c12;
+					position: absolute;
+					left: -10px;
+					bottom: 50%;
+					transform: translateY(50%);
+			    }
+			}
+	}
+	
+	
+ }
+}
+
+
+@keyframes progress {
+	from{
+		width: 0%;
+	}
+}
+
+/****
+====================
+Service Section Css start
+=======================
+***/
+
+.service-section{
+
+	.service{
+		text-align: center;
+		@include paddingX(20px);
+		@include paddingY(30px);
+		@include transition(0.4s, linear);
+		position: relative;
+		box-shadow: inset 0 0 0 2px #f2f2f2;
+		overflow: hidden;
+		i{
+			width: 75px;
+			height: 75px;
+			background-color: #919190;
+			line-height: 75px;
+			text-align: center;
+			border-radius: 50%;
+			font-size: 30px;
+			color: #fff;
+			@include transition(0.4s, linear);
+		}
+
+		h3{
+			font-size: 22px;
+			color: #6e6e6e;
+			@include paddingY(20px);
+			text-transform: uppercase;
+			margin-bottom: 0;
+			padding-bottom: 0;
+			@include transition(0.4s, linear);
+
+		}
+		p{
+			color: #6b6b6b;
+			font-size: 17px;
+			@include transition(0.4s, linear);
+		}
+
+		
+
+		&::after{
+			content: "";
+			position: absolute;
+			left: 0;
+		    top: 0;
+		    width: 0;
+		    height: 0;
+		    border-top: 2px solid $themeColor;
+		    border-left: 2px solid $themeColor;
+		    @include transition(0.4s, linear);
+		    opacity:0;
+		}
+
+		&::before{
+			content: "";
+			position: absolute;
+			left: -12px;
+		    top: -47px;
+		    width: 73px;
+		    height: 144px;
+		    background: #fff;
+		    transform: rotate(45deg);
+		      @include transition(0.2s, linear);
+		      opacity: 0;
+		}
+		&:hover{
+			box-shadow: inset 0 0 0 0 transparent;
+			background-color: $themeColor;
+			h3,p{
+				color: #fff;
+			}
+			i{
+				background-color: #fff;
+				color: $themeColor;
+			}
+
+			&::after{
+				width: 20px;
+		    	height: 20px;
+		    	opacity: 1;
+			}
+
+			&::before{
+				opacity: 1;
+			}
+	}
+}
+}
+
+/****
+====================
+STatic Section Css start
+=======================
+***/
+
+.static-section{
+	background-image: url('../images/statics.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: relative;
+
+	&::before{
+		content:"";	
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: rgba(0,0,0, 0.7);
+		z-index: 0;
+	}
+	.container{
+		position: relative;
+		.bar{
+			position:relative;
+
+			&::before{
+				content:"";
+				position: absolute;
+				width: 100%;
+			    height: 5px;
+			    background: #fff;
+			    bottom: 46%;
+			    transform: translateY(46%) scaleX(0.7);
+			}
+		}
+	}
+	.heading{
+		color: #fff !important;
+		position: relative;
+	}
+	.bar{}
+	.static{
+		position: relative;
+		color: #fff;
+		h3{
+			font-size: 35px;
+			font-weight: 600;
+		}
+		i{
+			color: $themeColor;
+			font-size: 30px;
+		    width: 80px;
+		    height: 80px;
+		    background: #fff;
+		    line-height: 80px;
+		    text-align: center;
+		    border-radius: 50%;
+		    @include marginY(30px);
+		}
+		h2{
+			font-weight: 600;
+			font-size: 25px;
+		}
+	}
+}
+
+
+/****
+====================
+Work Section Css start
+=======================
+***/
+
+.work-section{
+	ul{
+		padding-bottom: 80px;
+		li{
+			.active{
+				background: $themeColor;
+				color: #fff;
+			}
+			button{
+				background: transparent;
+				border:none;
+				font-size: 20px;
+				line-height: 42px;
+				color: #565656;
+				@include paddingY(2px);
+				@include paddingX(8px);
+				@include marginX(5px);
+				@include transition(0.4s, linear);
+				&:hover, .active{
+					background: $themeColor;
+					color: #fff;
+				}
+			}
+		}
+
+		
+	}
+
+	.work{
+		position: relative;
+		overflow: hidden;
+
+		&::before{
+			content:"";
+			position: absolute;	
+			width:100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: rgba(0,0,0, 0.7);	
+			transform: scale(0);
+			@include transition(0.6s, linear);
+		}
+
+		a{
+			i{
+				text-decoration: none;
+				position: absolute;
+				right: -100px;
+				top: 12px;
+				color: #fff;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				border-radius: 50%;
+				background-color: $themeColor;
+				font-size: 16px;
+				@include transition(0.8s, linear);
+			}
+		}
+		.work-content{
+			position: absolute;
+			background-color: #232323;
+			width: 100%;
+		    bottom: -100px;
+			left: 0;
+			@include paddingX(10px);
+			@include paddingY(10px);
+			@include transition(0.8s, linear);
+			h6{
+				font-size: 17px;
+				color: #fff;
+				font-weight: 600;
+			}
+			p{
+				color: #b5b4b4;
+				font-size: 14px;
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
+		&:hover{
+			.work-content{
+				bottom: 0;
+			}
+			i{
+				right: 10px;
+			}
+
+			&::before{
+				transform: scale(1);
+			}
+		}
+	}
+}
+
+
+/****
+====================
+Recent story Section Css start
+=======================
+***/
+
+.recent-story{
+	.story-content{
+		@include paddingX(30px);
+		@include paddingY(30px);
+		span{
+			font-size: 16px;
+			color: #7e7d7d;
+		}
+		img{
+			/* height: 100%; */
+		}
+		h5{
+			font-size: 20px;
+			font-weight: 700;
+			color: $themeColor;
+			/* padding-bottom: 15px; */
+		}
+		p{
+			font-size: 16px;
+			color: #858282;
+			text-align: justify;
+		}
+		a{
+			font-size: 16px;
+			color: #fff;
+			@include paddingX(20px);
+			@include paddingY(10px);
+			background-color: #282828;
+			text-decoration: none;
+			display: inline-block;
+			text-align: center;
+
+		}
+		.two{
+			background-color: #aaaaaa;
+		}
+	}
+
+	.our-bullet{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		text-align: center;
+		padding-top: 50px;
+
+		li{
+			width: 15px;
+			height: 15px;
+			background-color: $themeColor;
+			border-radius: 50%;
+			display:inline-block;
+			@include marginX(5px);
+
+		}
+	}
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: $themeColor;
+}
+.owl-theme .owl-dots .owl-dot span {
+    width: 15px;
+    height: 15px;
+    margin: 50px 7px 0;
+    background: #f39c1282;
+    
+}
+button:focus {
+    outline: 0 dotted;
+    outline: 0 auto -webkit-focus-ring-color;
+}
+
+/****
+====================
+Lifechanging story Css start
+=======================
+***/
+
+.lifechange-story{
+	@include paddingY(60px);
+	position: relative;
+	&::before{
+		content:"";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: #262626;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+	.lifechange-img{
+		@include paddingX(20px);
+	}
+	.lifechange-content{
+		margin-left: 25px;
+		p{
+			color: #c7c7c7;
+		    padding-bottom: 0;
+		    margin-bottom: 0;
+		    text-align: justify;
+
+		}
+	}
+}
+
+/****
+====================
+Testimonial section Css start
+=======================
+***/
+.feedback-section{
+	.feedback-content{
+		background-color: #f6f6f6;
+		@include paddingX(30px);
+		@include paddingY(30px);
+		margin-bottom: 40px;
+		position: relative;
+		
+		&::after{
+			content:"";
+			position: absolute;
+			width: 20px;
+		    height: 20px;
+		    background: #f6f6f6;
+		    bottom: -10px;
+		    left: 100px;
+		    transform: rotate(45deg);
+		}
+
+
+		h6{
+			font-size: 18px;
+			font-weight: 700;
+			color:#696868;
+		}
+		p{
+			margin-bottom: 0;
+			padding-bottom: 0;
+			color: #838282;
+			font-size: 16px;
+			font-style: italic;
+		}
+	}
+	.feedback-img{
+		display: flex;
+		align-items: center;
+		margin-left: 66px;
+		.f-img{
+			img{}
+		}
+		.f-position{
+			padding-left: 15px;
+			h5{
+				font-size: 18px;
+				color: $themeColor;
+				font-weight: 700;
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+			p{
+				font-size: 17px;
+				color: #696868;
+				font-style: italic;
+			}
+		}
+	}
+
+	.our-bullet{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		text-align: center;
+		padding-top: 70px;
+
+		li{
+			width: 15px;
+			height: 15px;
+			background-color: $themeColor;
+			border-radius: 50%;
+			display:inline-block;
+			@include marginX(5px);
+
+		}
+	}
+}
+
+/****
+====================
+Latest Tweet section Css start
+=======================
+***/
+
+.tweet-section{
+	background-image: url('../images/twitter.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+
+
+	&::before{
+		content:"";	
+		position: absolute;
+		width: 100%;
+	    height: 100%;
+	    top: 0;
+	    left: 0;
+	    background: rgba(0,0,0, 0.7);
+
+		
+	}
+
+	.heading{
+		position: relative;
+	}
+		p{
+			font-size: 18px;
+			color: #fff;
+			text-align: center;
+			@include paddingX(30px);
+			font-weight: 500;
+			position: relative;
+		}
+		span{
+			color: $themeColor;
+		}
+	
+}
+
+/****
+====================
+Get in Touch section Css start
+=======================
+***/
+
+.get-in-touch{
+	p{
+		@include paddingX(120px);
+		/* text-align: center; */
+		font-size: 17px;
+		color: #585757;
+		font-weight: 600;
+		padding-bottom: 60px;
+	}
+
+	label{
+		color: #616161;
+		font-size: 17px;
+		@include paddingY(12px);
+		font-weight: 500;
+	}
+	input{
+		border: 0;
+	    border-bottom: 2px solid #b0b0b0;
+	    border-radius: 0;
+
+	    &:focus{
+	    border-color: none;
+	    box-shadow: 0 0 0 0 rgba(13,110,253,0);
+	    border-bottom: 2px solid $themeColor;
+	    }
+	}
+	textarea{
+		border: 0;
+	    border-bottom: 2px solid #b0b0b0;
+	    border-radius: 0;
+	    resize: none;
+	    &:focus{
+	    border-color: none;
+	    box-shadow: 0 0 0 0 rgba(13,110,253,0);
+	    border-bottom: 2px solid $themeColor;
+	    }
+	}
+	.btn-custom{
+		text-decoration: none;
+		color: #fff;
+		font-weight: 600;
+		font-size: 15px;
+		@include paddingX(18px);
+		@include paddingY(10px);
+		background-color: $themeColor;
+		text-transform: uppercase;
+		display: inline-block;
+		margin-top: 20px;
+	}
+}
+
+/****
+====================
+Address section Css start
+=======================
+***/
+
+.address-section{
+	position: relative;
+	.address{
+		background-color: $themeColor;
+		color: #fff;
+		opacity:0.8;
+		@include paddingX(25px);
+		@include paddingY(40px);
+		position: absolute;
+		    right: 8.9% !important;
+		    bottom: 50%;
+		    transform: translateY(50%);
+
+		.office{
+			margin-bottom: 30px;
+			p{
+				font-size: 17px;
+			}
+			strong{
+				font-weight: 700;
+			}
+		}
+	}
+	.phone{
+		p{
+			font-size: 17px;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+	}
+}
+
+
+/****
+====================
+Follow me section Css start
+=======================
+***/
+.follow-me-section{
+	ul{
+		li{
+
+			i{
+				border:1px solid #ebebeb;
+				width: 45px;
+				height: 45px;
+				line-height: 45px;
+				text-align: center;
+				font-size: 20px;
+				color: $themeColor;
+				@include marginX(3px);
+				@include transition(0.4s, linear);
+			}
+
+			&:hover i, .active{
+					background-color: $themeColor;
+					color: #fff;
+				}
+		}
+	}
+}
+
+/****
+====================
+Footer section Css start
+=======================
+***/
+
+.footer-section{
+		background-color: $themeColor;
+		@include paddingY(50px);
+
+	p{
+		margin-bottom: 0;
+		padding-bottom: 0;
+		text-align: center;
+		font-size: 17px;
+		font-weight: 600;
+		color: #505050;
+		font-family: $font;
+		span{
+			color: #fff;
+		}
+	}
+}

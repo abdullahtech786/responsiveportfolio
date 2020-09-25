@@ -1,0 +1,34 @@
+
+@mixin paddingY($padd){
+	padding-top: $padd !important;
+    padding-bottom: $padd !important;
+}
+@mixin paddingX($padd){
+	padding-left: $padd !important;
+    padding-right: $padd !important;
+}
+
+@mixin transition($s, $effect){
+	-webkit-transition:all $s $effect;
+	-o-transition:all $s $effect;
+	transition:all $s $effect;
+}
+
+@mixin border($s, $color){
+	border: $s solid $color;
+}
+
+@mixin translate($x, $y){
+	-webkit-transform:translate($x, $y);
+	-ms-transform:translate($x, $y);
+	transform:translate($x, $y);
+}
+
+@mixin marginY($marg){
+	margin-top: $marg !important;
+    margin-bottom: $marg !important;
+}
+@mixin marginX($marg){
+	margin-left: $marg !important;
+    margin-right: $marg !important;
+}
